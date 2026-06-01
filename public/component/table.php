@@ -13,7 +13,7 @@
     <?php
     
 
-    $sqlUsuarios = "SELECT * FROM users";
+    $sqlUsuarios = "SELECT * FROM usuario";
 
     $resultadoUsuarios = $conn -> query($sqlUsuarios);
 
@@ -21,8 +21,8 @@
         echo "<tr>
         
             <td>" . $linha["id"] . "</td>
-            <td>" . $linha["username"] . "</td>
-            <td>" . $linha["password"] . "</td>
+            <td>" . $linha["usuario"] . "</td>
+            <td>" . $linha["senha"] . "</td>
         
         </tr>";
     }
