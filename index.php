@@ -7,9 +7,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
 
-    $sql = "SELECT * FROM users 
-    WHERE username = '$usuario' 
-    AND password = '$senha'";
+    $sql = "SELECT * FROM usuario
+    WHERE usuario = '$usuario' 
+    AND senha = '$senha'";
 
     $resultado = $conn -> query($sql);
 
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
      <?php
-    include("../public/component/table.php");
+    include("public/component/navbar.php");
     ?>
     <h2>Login com PHP</h2><form method="POST">
         <label for="usuario">Usuario:</label>
