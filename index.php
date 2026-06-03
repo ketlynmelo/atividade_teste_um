@@ -1,21 +1,33 @@
 <?php
 
+// Inclui o arquivo responsável pela conexão com o banco de dados
 include("infra/db/connect.php");
 
+// Verifica se o formulário foi enviado utilizando o método POST
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
+    // Pega os valores digitados no formulário
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
-
+    
+    // Consulta SQL para verificar se existe um usuário e senha informados
     $sql = "SELECT * FROM usuario
     WHERE usuario = '$usuario' 
     AND senha = '$senha'";
 
+    // Executa a consulta no banco de dados
     $resultado = $conn -> query($sql);
 
+    // Verifica se a consulta retornou pelo menos um registro
     if($resultado -> num_rows > 0){
+
+        // Cria uma variável de sessão para armazenar o usuário logado
         $_SESSION["usuario"] = $usuario;
+
+        // Redireciona o usuário para a página inicial
         header("Location: public/home.php");
+
+        // Encerra a execução do script depois do redirecionamento
         exit();
     }else{
         $erro = "Usuário ou senha inválidos.";
