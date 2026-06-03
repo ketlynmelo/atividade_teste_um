@@ -23,7 +23,6 @@
 
         // Mostra os dados do usuário em uma nova linha da tabela
         echo "<tr>
-        
             <td>" . $linha["id"] . "</td>
             <td>" . $linha["usuario"] . "</td>
             <td>" . $linha["senha"] . "</td>

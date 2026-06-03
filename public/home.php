@@ -1,16 +1,31 @@
 <?php
     include("../infra/db/connect.php");
+
+    // Verifica se existe um usuário logado na sessão
     if(!isset($_SESSION["usuario"])){
+         // Caso não exista, redireciona para a página de login
         header("Location: ../index.php");
+        // Encerra a execução
         exit();
     }
+
+      // Verifica se o formulário foi enviado utilizando o método POST
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        // Recebe os dados digitados no formulário
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
+
+        // Comando SQL para inserir um novo usuário no banco de dados
         $sql = "INSERT INTO usuario (usuario, senha) VALUES ('$usuario','$senha')";
+
+         // Executa a consulta e verifica se foi realizada com sucesso
         if($conn -> query($sql) === TRUE){
+
+            // Exibe mensagem de sucesso
             echo "<script>alert('Usuário Cadastrado com sucesso!')</script>";
         }else{
+            // Exibe mensagem de erro
             echo "<script>alert('Erro Usuário Não Cadastrado!')</script>";
         }
     }
