@@ -8,6 +8,7 @@
         <th>ID</th>
         <th>Usuário</th>
         <th>Senha</th>
+        
     </tr>
 
     <?php
@@ -26,10 +27,11 @@
             <td>" . $linha["id"] . "</td>
             <td>" . $linha["usuario"] . "</td>
             <td>" . $linha["senha"] . "</td>
-        
+            <td> <a href=editar.php?id=". $linha['id']."><button>Editar</button></a></td>
+            <td> <a href=excluir.php?id=". $linha['id']."><button>Excluir</button></a></td>
         </tr>";
     }
-    
+
     ?>
 
 </table>

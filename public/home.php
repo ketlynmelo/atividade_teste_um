@@ -64,7 +64,6 @@
     include("../public/component/table.php");
     ?>
 
-
     <a href="logout.php">Sair</a>
     
 </body>
