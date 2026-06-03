@@ -12,12 +12,16 @@
 
     <?php
     
-
+    // Comando SQL para buscar todos os registros da tabela "usuario"
     $sqlUsuarios = "SELECT * FROM usuario";
 
+    // Executa a consulta no banco de dados
     $resultadoUsuarios = $conn -> query($sqlUsuarios);
 
+     // Percorre cada registro retornado pela consulta
     while($linha = $resultadoUsuarios->fetch_assoc()){
+
+        // Mostra os dados do usuário em uma nova linha da tabela
         echo "<tr>
         
             <td>" . $linha["id"] . "</td>
