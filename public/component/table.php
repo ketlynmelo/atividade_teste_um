@@ -27,9 +27,9 @@
             <td>" . $linha["id"] . "</td>
             <td>" . $linha["usuario"] . "</td>
             <td>" . $linha["senha"] . "</td>
-            <td> <a href=editar.php?id=". $linha['id']."><button>Editar</button></a></td>
-            <td> <a href=excluir.php?id=". $linha['id']."><button>Excluir</button></a></td>
-        </tr>";
+            <td> <a href=editar.php?id=". $linha['id'].">Editar</a></td>
+            <td> <a href=excluir.php?id=". $linha['id'].">Excluir</a></td>
+            </tr>";
     }
 
     ?>
