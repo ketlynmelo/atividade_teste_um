@@ -44,3 +44,23 @@ Quando o usuário deseja encerrar sua utilização do sistema, pode utilizar a o
 * Reutilização de código por meio do comando include().
 * Integração entre front-end e back-end.
 * Compreensão da importância de práticas de segurança, como criptografia de senhas e uso de Prepared Statements.
+
+### Funcionalidade de Remoção de Usuários (Em Desenvolvimento)
+
+A funcionalidade responsável pela remoção de usuários não foi concluída durante o desenvolvimento do sistema. Até o momento, apenas a etapa inicial de sua implementação foi realizada.
+
+### Funcionamento Previsto da Funcionalidade
+
+Na tela de listagem de usuários, cada registro deverá conter uma opção para exclusão. Ao acionar essa opção, o sistema enviará o identificador (ID) do usuário para um arquivo PHP responsável pelo processamento da remoção no banco de dados.
+
+### Etapas do Processo de Exclusão
+* Localizar o usuário por meio do seu identificador único (ID);
+* Encaminhar o ID para o script responsável pela exclusão;
+* Validar a existência do usuário no banco de dados;
+* Executar a instrução SQL para apagar o registro correspondente;
+* Atualizar a tabela de usuários após a remoção;
+* Apresentar uma mensagem informando o resultado da operação.
+
+### Arquivos Envolvidos na Implementação
+* home.php: inclusão do botão de exclusão na listagem de usuários;
+* delete.php: responsável pelo processamento e remoção do registro no banco de dados
